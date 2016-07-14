@@ -33,10 +33,10 @@ describe('TaskList app', function(){
   // I would like to change the status of the task to completed
   it('change the status of a task', function(){
     my_tasks.storeTask('Buy milk');
-    expect(my_tasks.showTasks()[0].completed()).to.eql(false);
-    task = my_tasks.showTasks()[0]
+    expect(my_tasks.showTasks()[0]).to.include({_name: 'Buy milk', _completed: false});
+    task = my_tasks.showTasks()[0];
     my_tasks.completeTask(task);
-    expect(my_tasks.showTasks()[0].completed()).to.eql(true);
+    expect(my_tasks.showTasks()[0]).to.include({_name: 'Buy milk', _completed: true});
   });
 });
 

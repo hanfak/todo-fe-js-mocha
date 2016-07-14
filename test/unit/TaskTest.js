@@ -22,6 +22,9 @@ describe('Task', function(){
   });
 
   // It completes the task
-
+  it('complete a task', function(){
+    task.complete();
+    expect(task.completed()).to.eql(true);
+  });
   // It uncompletes the task
 });
